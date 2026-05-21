@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Light & Cosmology – Electromagnetism Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Light & Cosmology</h1>
+    <p class="subtitle">Electromagnetism, Stars, and the Expanding Universe</p>
+    <nav>
+      <a href="#intro">Intro</a>
+      <a href="#em-spectrum">EM Spectrum</a>
+      <a href="#em-equations">Equations</a>
+      <a href="#wave-particle">Wave vs Particle</a>
+      <a href="#star-life">Star Life Cycle</a>
+      <a href="#hr-diagram">H-R Diagram</a>
+      <a href="#sun-spectra">Sun & Spectra</a>
+      <a href="#redshift">Redshift</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        This site reviews key ideas from the Light and Cosmology unit: the electromagnetic spectrum, how light behaves, how stars live and die, and how we know the universe is expanding [web:30][web:28][web:29].
+      </p>
+      <p>
+        Use the navigation bar to jump to different topics, then test yourself with the quiz at the bottom.
+      </p>
+    </section>
+
+    <!-- EM Spectrum -->
+    <section id="em-spectrum">
+      <h2>The Electromagnetic Spectrum</h2>
+      <p>
+        The electromagnetic spectrum is the full range of electromagnetic waves, from low-energy radio waves to high-energy gamma rays [web:8][web:41].
+      </p>
+
+      <!-- Inline SVG: EM spectrum diagram -->
+      <div class="image-wrapper">
+        <svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gradient bar -->
+          <defs>
+            <linearGradient id="emGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#800080" />   <!-- radio (long, low f) -->
+              <stop offset="20%" stop-color="#0000ff" />
+              <stop offset="40%" stop-color="#00ffff" />
+              <stop offset="60%" stop-color="#00ff00" />
+              <stop offset="80%" stop-color="#ffff00" />
+              <stop offset="100%" stop-color="#ff0000" /> <!-- gamma (short, high f) -->
+            </linearGradient>
+          </defs>
+          <rect x="20" y="30" width="560" height="30" fill="url(#emGrad)" />
+
+          <!-- Band separators -->
+          <line x1="90" y1="25" x2="90" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="160" y1="25" x2="160" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="230" y1="25" x2="230" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="300" y1="25" x2="300" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="370" y1="25" x2="370" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="440" y1="25" x2="440" y2="65" stroke="#ffffff" stroke-width="1" />
+          <line x1="510" y1="25" x2="510" y2="65" stroke="#ffffff" stroke-width="1" />
+
+          <!-- Labels -->
+          <text x="35" y="90" fill="#ffffff" font-size="10">Radio</text>
+          <text x="95" y="90" fill="#ffffff" font-size="10">Micro</text>
+          <text x="165" y="90" fill="#ffffff" font-size="10">IR</text>
+          <text x="235" y="90" fill="#ffffff" font-size="10">Visible</text>
+          <text x="305" y="90" fill="#ffffff" font-size="10">UV</text>
+          <text x="375" y="90" fill="#ffffff" font-size="10">X-ray</text>
+          <text x="445" y="90" fill="#ffffff" font-size="10">Gamma</text>
+
+          <text x="20" y="20" fill="#ffffff" font-size="10">
+            Long wavelength, low frequency
+          </text>
+          <text x="330" y="20" fill="#ffffff" font-size="10">
+            Short wavelength, high frequency
+          </text>
+        </svg>
+        <p class="img-caption">
+          Simple electromagnetic spectrum diagram from radio (low energy) to gamma rays (high energy) [web:30][web:33].
+        </p>
+      </div>
+
+      <p>
+        From lowest energy / longest wavelength to highest energy / shortest wavelength, the spectrum goes: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays [web:30][web:33].
+      </p>
+
+      <div class="spectrum-grid">
+        <div class="spectrum-card">
+          <h3>Radio Waves</h3>
+          <p>Longest wavelength, lowest frequency and energy [web:30].</p>
+          <p>Uses: radio broadcasting, TV, communication [web:41].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>Microwaves</h3>
+          <p>Shorter wavelength than radio, higher frequency [web:30].</p>
+          <p>Uses: microwave ovens, radar, satellite links [web:41].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>Infrared</h3>
+          <p>Felt as heat, just beyond red visible light [web:41].</p>
+          <p>Uses: remote controls, thermal imaging [web:41].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>Visible Light</h3>
+          <p>The only part of the spectrum human eyes can see [web:30].</p>
+          <p>Uses: vision, photography, fiber optics [web:24].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>Ultraviolet</h3>
+          <p>Higher energy than visible; can cause sunburn [web:30].</p>
+          <p>Uses: sterilization, black lights [web:41].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>X-rays</h3>
+          <p>Very high energy, can pass through soft tissue [web:30].</p>
+          <p>Uses: medical imaging, security scanners [web:41].</p>
+        </div>
+        <div class="spectrum-card">
+          <h3>Gamma Rays</h3>
+          <p>Highest energy, shortest wavelength [web:30].</p>
+          <p>Uses: cancer treatment, studying violent space events [web:41].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EM Equations -->
+    <section id="em-equations">
+      <h2>Key Equations & Relationships</h2>
+
+      <h3>Frequency and Wavelength</h3>
+      <p>
+        In a vacuum, the speed of light is \( c \approx 3.0 \times 10^{8} \) m/s, and it relates wavelength \( \lambda \) and frequency \( f \) through \( c = \lambda f \) [web:30].
+      </p>
+      <p>
+        As frequency increases, wavelength decreases, so high-frequency waves like X-rays and gamma rays have very short wavelengths [web:30][web:33].
+      </p>
+
+      <h3>Photon Energy</h3>
+      <p>
+        The energy of a single photon is given by \( E = h f \), where \( h \approx 6.63 \times 10^{-34} \) J·s is Planck’s constant [web:33].
+      </p>
+      <p>
+        This means higher-frequency light has higher-energy photons, which is why ultraviolet, X-rays, and gamma rays are more dangerous to living tissue [web:33].
+      </p>
+
+      <h3>Ionizing vs Non-ionizing Radiation</h3>
+      <p>
+        Non-ionizing radiation (radio, microwaves, infrared, visible) does not normally have enough energy to knock electrons off atoms [web:33].
+      </p>
+      <p>
+        Ionizing radiation (ultraviolet, X-rays, gamma rays) has photons energetic enough to ionize atoms and molecules, which can damage cells [web:33].
+      </p>
+    </section>
+
+    <!-- Wave vs Particle -->
+    <section id="wave-particle">
+      <h2>Light as a Wave and a Particle</h2>
+      <p>
+        Light behaves like a wave when it shows interference and diffraction, such as in the double-slit experiment where overlapping waves create bright and dark fringes [web:30].
+      </p>
+      <p>
+        Light also behaves like a particle, because it comes in discrete packets called photons that transfer energy in chunks, as seen in the photoelectric effect [web:33].
+      </p>
+      <p>
+        Wave–particle duality means that light is described as an electromagnetic wave and as a stream of photons, depending on the experiment and how it is observed [web:30][web:33].
+      </p>
+    </section>
+
+    <!-- Star Life Cycle -->
+    <section id="star-life">
+      <h2>Life Cycle of Stars</h2>
+
+      <!-- Inline SVG: Life cycle diagram -->
+      <div class="image-wrapper">
+        <svg viewBox="0 0 600 130" xmlns="http://www.w3.org/2000/svg">
+          <!-- Nebula -->
+          <circle cx="40" cy="60" r="20" fill="#4444aa" />
+          <text x="20" y="110" fill="#ffffff" font-size="10">Nebula</text>
+
+          <!-- Arrow -->
+          <line x1="60" y1="60" x2="95" y2="60" stroke="#ffffff" />
+          <polygon points="95,60 88,55 88,65" fill="#ffffff" />
+
+          <!-- Protostar -->
+          <circle cx="120" cy="60" r="15" fill="#ffaa33" />
+          <text x="100" y="110" fill="#ffffff" font-size="10">Protostar</text>
+
+          <!-- Arrow -->
+          <line x1="135" y1="60" x2="170" y2="60" stroke="#ffffff" />
+          <polygon points="170,60 163,55 163,65" fill="#ffffff" />
+
+          <!-- Main-sequence -->
+          <circle cx="195" cy="60" r="18" fill="#ffff66" />
+          <text x="165" y="110" fill="#ffffff" font-size="10">Main-sequence</text>
+
+          <!-- Split into low and high mass paths -->
+          <line x1="213" y1="60" x2="250" y2="40" stroke="#ffffff" />
+          <polygon points="250,40 242,38 244,46" fill="#ffffff" />
+
+          <line x1="213" y1="60" x2="250" y2="80" stroke="#ffffff" />
+          <polygon points="250,80 244,74 242,82" fill="#ffffff" />
+
+          <!-- Low-mass path: red giant -> planetary nebula -> white dwarf -->
+          <circle cx="280" cy="40" r="22" fill="#ff6666" />
+          <text x="260" y="20" fill="#ffffff" font-size="10">Red giant</text>
+
+          <line x1="302" y1="40" x2="335" y2="40" stroke="#ffffff" />
+          <polygon points="335,40 328,35 328,45" fill="#ffffff" />
+
+          <circle cx="360" cy="40" r="15" fill="#66cccc" />
+          <text x="335" y="20" fill="#ffffff" font-size="10">Planetary nebula</text>
+
+          <line x1="375" y1="40" x2="410" y2="40" stroke="#ffffff" />
+          <polygon points="410,40 403,35 403,45" fill="#ffffff" />
+
+          <circle cx="435" cy="40" r="8" fill="#ffffff" />
+          <text x="420" y="20" fill="#ffffff" font-size="10">White dwarf</text>
+
+          <!-- High-mass path: supergiant -> supernova -> neutron star/black hole -->
+          <circle cx="280" cy="80" r="25" fill="#ff9933" />
+          <text x="260" y="120" fill="#ffffff" font-size="10">Supergiant</text>
+
+          <line x1="305" y1="80" x2="340" y2="80" stroke="#ffffff" />
+          <polygon points="340,80 333,75 333,85" fill="#ffffff" />
+
+          <circle cx="365" cy="80" r="18" fill="#ff3333" />
+          <text x="345" y="120" fill="#ffffff" font-size="10">Supernova</text>
+
+          <line x1="383" y1="80" x2="420" y2="70" stroke="#ffffff" />
+          <polygon points="420,70 413,66 414,76" fill="#ffffff" />
+
+          <line x1="383" y1="80" x2="420" y2="90" stroke="#ffffff" />
+          <polygon points="420,90 414,84 413,94" fill="#ffffff" />
+
+          <circle cx="445" cy="70" r="10" fill="#9999ff" />
+          <text x="430" y="55" fill="#ffffff" font-size="10">Neutron</text>
+
+          <circle cx="445" cy="90" r="14" fill="#000000" />
+          <text x="430" y="120" fill="#ffffff" font-size="10">Black hole</text>
+        </svg>
+        <p class="img-caption">
+          Simplified life cycle of a star: low-mass path (white dwarf) and high-mass path (supernova, neutron star, black hole) [web:28][web:37].
+        </p>
+      </div>
+
+      <h3>How Stars Form</h3>
+      <p>
+        Stars form inside large clouds of gas and dust called nebulae; gravity pulls this material together into a protostar, which heats up until nuclear fusion can begin in the core [web:28][web:37].
+      </p>
+      <p>
+        Once hydrogen fusion starts, the object becomes a main-sequence star and stays in that stage for most of its lifetime [web:28][web:37].
+      </p>
+
+      <h3>Low-mass Stars (like the Sun)</h3>
+      <p>
+        Low-mass stars form from nebulae, contract into protostars, and then spend billions of years as main-sequence stars, steadily fusing hydrogen into helium [web:28][web:37].
+      </p>
+      <p>
+        When core hydrogen runs out, they expand into red giants, then shed their outer layers as a planetary nebula, leaving behind a white dwarf that slowly cools [web:37][web:34].
+      </p>
+
+      <h3>High-mass Stars</h3>
+      <p>
+        High-mass stars also form in nebulae and pass through the protostar and main-sequence stages, but they burn their fuel much faster because their cores are hotter [web:37][web:28].
+      </p>
+      <p>
+        After becoming supergiants and fusing heavier elements in layers, they end their lives in powerful supernova explosions, leaving behind neutron stars or black holes [web:37][web:34].
+      </p>
+
+      <h3>Who Burns Out Faster?</h3>
+      <p>
+        High-mass stars burn out faster, often lasting only millions of years, while low-mass stars like the Sun can shine for billions of years [web:28][web:34].
+      </p>
+
+      <h3>How Heavier Elements Form</h3>
+      <p>
+        In stars, fusion first turns hydrogen into helium and later builds elements like carbon and oxygen; in massive stars and supernovae, even heavier elements are created and spread into space [web:28][web:37].
+      </p>
+      <p>
+        These heavy elements eventually become part of new stars, planets, and living things, meaning we are literally made of recycled star material [web:28][web:37].
+      </p>
+    </section>
+
+    <!-- H-R Diagram -->
+    <section id="hr-diagram">
+      <h2>Hertzsprung–Russell (H-R) Diagram</h2>
+
+      <!-- Inline SVG: simplified H-R diagram -->
+      <div class="image-wrapper">
+        <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <!-- Axes -->
+          <line x1="50" y1="20" x2="50" y2="210" stroke="#ffffff" />
+          <line x1="50" y1="210" x2="360" y2="210" stroke="#ffffff" />
+
+          <!-- Labels -->
+          <text x="10" y="20" fill="#ffffff" font-size="10">High</text>
+          <text x="10" y="35" fill="#ffffff" font-size="10">Luminosity</text>
+          <text x="10" y="210" fill="#ffffff" font-size="10">Low</text>
+
+          <text x="280" y="230" fill="#ffffff" font-size="10">Cool</text>
+          <text x="200" y="230" fill="#ffffff" font-size="10">Temperature</text>
+          <text x="60" y="230" fill="#ffffff" font-size="10">Hot</text>
+
+          <!-- Main sequence band (line of points) -->
+          <circle cx="70" y="60" r="4" fill="#00ffff" />
+          <circle cx="100" cy="80" r="4" fill="#00ffcc" />
+          <circle cx="130" cy="100" r="4" fill="#00ff99" />
+          <circle cx="160" cy="120" r="4" fill="#00ff66" />
+          <circle cx="190" cy="140" r="4" fill="#00ff33" />
+          <circle cx="220" cy="160" r="4" fill="#99ff00" />
+          <circle cx="250" cy="180" r="4" fill="#ffff00" />
+          <circle cx="280" cy="195" r="4" fill="#ff9900" />
+          <circle cx="310" cy="205" r="4" fill="#ff0000" />
+
+          <!-- Giants -->
+          <circle cx="200" cy="80" r="8" fill="#ffcc66" />
+          <text x="210" y="80" fill="#ffffff" font-size="8">Giants</text>
+
+          <!-- White dwarfs -->
+          <circle cx="130" cy="200" r="3" fill="#ffffff" />
+          <text x="140" y="200" fill="#ffffff" font-size="8">White dwarfs</text>
+        </svg>
+        <p class="img-caption">
+          Simplified H-R diagram: main sequence from hot, bright blue stars to cool, dim red stars, plus giants and white dwarfs [web:31][web:34].
+        </p>
+      </div>
+
+      <p>
+        An H-R diagram plots a star’s luminosity on the vertical axis and its surface temperature or spectral type on the horizontal axis, with temperature decreasing from left to right [web:31][web:49].
+      </p>
+      <p>
+        Most stars fall along the main sequence, a diagonal band from hot, bright blue stars to cool, dim red stars, while giants and supergiants lie above and white dwarfs lie below [web:31][web:34].
+      </p>
+      <p>
+        At the same temperature, a bigger star has a higher luminosity, so large stars appear higher on the diagram; hotter stars appear bluer, and cooler stars appear redder [web:31][web:49].
+      </p>
+    </section>
+
+    <!-- Sun & Spectra -->
+    <section id="sun-spectra">
+      <h2>The Sun and Star Spectra</h2>
+      <p>
+        The Sun is mostly hydrogen and helium, with small amounts of heavier elements; we know this by studying its spectrum and matching absorption lines to elements measured in the lab [web:34][web:31].
+      </p>
+
+      <p>
+        Each chemical element produces a unique set of spectral lines, like a barcode; by comparing a star’s spectrum to known patterns, astronomers can identify which elements are present [web:32][web:34].
+      </p>
+
+      <p>
+        This technique, called spectroscopy, lets us learn the composition, temperature, and motion of stars, even though we cannot visit them directly [web:32][web:28].
+      </p>
+    </section>
+
+    <!-- Redshift & Blueshift -->
+    <section id="redshift">
+      <h2>Redshift & Blueshift</h2>
+
+      <!-- Inline SVG: spectrum with original, redshifted, blueshifted lines -->
+      <div class="image-wrapper">
+        <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+          <!-- Spectrum bar -->
+          <defs>
+            <linearGradient id="specGrad2" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#0000ff" />
+              <stop offset="50%" stop-color="#00ff00" />
+              <stop offset="100%" stop-color="#ff0000" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="360" height="20" fill="url(#specGrad2)" />
+
+          <!-- Original lines (black) -->
+          <line x1="120" y1="18" x2="120" y2="42" stroke="#000000" stroke-width="3" />
+          <line x1="200" y1="18" x2="200" y2="42" stroke="#000000" stroke-width="3" />
+          <line x1="280" y1="18" x2="280" y2="42" stroke="#000000" stroke-width="3" />
+
+          <!-- Redshifted lines (white, to the right) -->
+          <line x1="140" y1="18" x2="140" y2="42" stroke="#ffffff" stroke-width="2" />
+          <line x1="220" y1="18" x2="220" y2="42" stroke="#ffffff" stroke-width="2" />
+          <line x1="300" y1="18" x2="300" y2="42" stroke="#ffffff" stroke-width="2" />
+
+          <!-- Blueshifted lines (yellow, to the left) -->
+          <line x1="100" y1="18" x2="100" y2="42" stroke="#ffff00" stroke-width="2" />
+          <line x1="180" y1="18" x2="180" y2="42" stroke="#ffff00" stroke-width="2" />
+          <line x1="260" y1="18" x2="260" y2="42" stroke="#ffff00" stroke-width="2" />
+
+          <text x="20" y="65" fill="#ffffff" font-size="10">
+            Black = lab spectrum, white = redshift (away), yellow = blueshift (toward)
+          </text>
+        </svg>
+        <p class="img-caption">
+          Redshift moves spectral lines toward longer wavelengths (right); blueshift moves them toward shorter wavelengths (left) [web:29].
+        </p>
+      </div>
+
+      <h3>What is Redshift?</h3>
+      <p>
+        Redshift happens when light from an object is stretched to longer wavelengths, shifting its spectral lines toward the red side of the spectrum [web:29].
+      </p>
+      <p>
+        This usually means the object is moving away from us or that space itself is expanding between us and the object [web:29].
+      </p>
+
+      <h3>What is Blueshift?</h3>
+      <p>
+        Blueshift is the opposite: light is compressed to shorter wavelengths, so spectral lines move toward the blue side of the spectrum [web:29].
+      </p>
+      <p>
+        This indicates that the object is moving toward us along our line of sight [web:29].
+      </p>
+
+      <h3>How to Tell if a Star is Moving Toward or Away</h3>
+      <p>
+        To determine a star’s motion, astronomers compare its spectral lines to a reference spectrum from the same element measured in a lab [web:32][web:29].
+      </p>
+      <p>
+        If the star’s lines are shifted toward longer wavelengths, the star is redshifted and moving away; if the lines are shifted toward shorter wavelengths, the star is blueshifted and moving toward us [web:32][web:29].
+      </p>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz">
+      <h2>Quick Quiz: EM Spectrum & Motion</h2>
+      <p>Answer these questions to check your understanding.</p>
+      <div id="quiz-container"></div>
+      <button id="check-answers">Check Answers</button>
+      <p id="quiz-result"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created for High School Physics – Light & Cosmology, 2026.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
